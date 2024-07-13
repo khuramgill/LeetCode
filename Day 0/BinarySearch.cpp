@@ -25,7 +25,7 @@ int search(vector<int>& nums, int target)
         return -1;
     }
 
-// advanced Binary Search
+// First & Last Occurence of an element in a sorted array
 int FirstOccurence(vector<int>& nums, int target)    
     { 
      int strt = 0;
@@ -48,6 +48,28 @@ int FirstOccurence(vector<int>& nums, int target)
         } 
         return ans;
     }
+int LastOccurence(vector<int>& nums, int target)    
+    { 
+     int strt = 0;
+        int end = nums.size() - 1;
+        int ans = -1;
+        int mid = (strt + end)/2;
+
+        while(strt<=end){
+          if(target == nums[mid]){
+              ans = mid;
+              strt = mid + 1;
+          }
+          else if(nums[mid] < target ){
+              strt = mid + 1;
+          }
+          else {
+              end = mid - 1;
+          }
+          mid = (strt+end)/2;
+        } 
+        return ans;
+    }
 
 main()
 {
@@ -55,6 +77,7 @@ main()
     // int target = 7;
     // cout<<search(nums, target)<<endl;
     // repeated elements array
-    vector<int> nums1 = {1,2,3,4,5,5,5,6,6,7,7,7,7,8,9};
-    cout<<FirstOccurence(nums1, 7)<<endl;
+    vector<int> Arr = {1,2,3,4,5,5,5,6,6,7,7,7,7,8,9};
+    cout<<"First Occurence of 7 is at index: "<<FirstOccurence(Arr, 7)<<endl;
+    cout<<"Last  Occurence of 7 is at index: "<<LastOccurence(Arr, 7)<<endl;
 }

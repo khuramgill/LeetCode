@@ -46,12 +46,15 @@ int FirstOccurence(vector<int>& nums, int target)
           }
           mid = (strt+end)/2;
         } 
-        return -1;
+        return ans;
     }
 
 main()
 {
     vector<int> nums = {1,2,3,4,5,6,7,8,9};
-    int target = 7;
-    cout<<search(nums, target)<<endl;
+    // int target = 7;
+    // cout<<search(nums, target)<<endl;
+    // repeated elements array
+    vector<int> nums1 = {1,2,3,4,5,5,5,6,6,7,7,7,7,8,9};
+    cout<<FirstOccurence(nums1, 7)<<endl;
 }

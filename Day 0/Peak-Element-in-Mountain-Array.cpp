@@ -1,6 +1,7 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
 using namespace std;
-// 
+
 int peakIndexInMountainArray(vector<int>& arr) {
         int strt = 0;
         int end = arr.size() - 1;
@@ -18,19 +19,10 @@ int peakIndexInMountainArray(vector<int>& arr) {
         return strt;
         
     }
-main(){
-    // Range of int is -2^31 to 2^31-1
-    //fabinocci series generater code
-    int n;
-    cin>>n;
-    int a=0,b=1;
-    cout<<a<<" "<<b<<" ";
-    for(int i=2;i<n;i++){
-        int c=a+b;
-        cout<<c<<" ";
-        a=b;
-        b=c;
-    }
-    cout<<endl;
-    
+
+int main() {
+    vector<int> arr = {0,2,1,0};
+    int result = peakIndexInMountainArray(arr);
+    cout <<"Peak Element is: "<< result  << endl;
+    return 0;
 }

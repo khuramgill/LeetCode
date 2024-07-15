@@ -3,23 +3,21 @@
 using namespace std;
 
 int BinarySearch(int n){
-    int s = 0;
-    int e = n;
-    long long int mid = s + (e-s)/2;
-    int ans = 0;
-    while(s<=e){
-        int sqrt = mid*mid;
-        if(sqrt == n){
+    long long int s = 0, e = n, ans = 0;
+    while (s <= e) {
+        long long int mid = s + (e - s) / 2;
+        long long int sqrt = mid * mid;
+
+        if (sqrt == n) {
             return mid;
         }
-        else if(sqrt < n){
-            s = mid + 1;
-        }
-        else{
 
+        if (sqrt < n) {
             s = mid + 1;
+            ans = mid;
+        } else {
+            e = mid - 1;
         }
-        mid = s + (e-s)/2;
     }
     return ans;
 }
@@ -49,6 +47,6 @@ int sqrt1(int x){
 }
 
 main() {
-    int result = sqrt(4);
+    int result = sqrt(5);
     cout << result << endl;
 }

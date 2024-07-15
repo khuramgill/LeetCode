@@ -37,9 +37,9 @@ int BinarySearch(vector<int>& arr, int s ,int e , int key){
 int SearchInSortedRotatedArray(vector<int>& arr, int key){
     int e = arr.size()-1;
     int pivot = Pivot(arr,e);
-    // if(arr[pivot] == key){
-    //     return pivot;
-    // }
+    if(arr[pivot] == key){
+        return pivot;
+    }
     if(arr[pivot] <= key && key <= arr[e]){
         return BinarySearch(arr,pivot,e,key);
     }

@@ -23,18 +23,25 @@ int BinarySearch(int n){
 }
 
 int sqrt(int x) {
-    return BinarySearch(x);
-    // if (x == 0) return 0;
-    // int left = 1, right = x;
-    // while (true) {
-    //     int mid = left + (right - left) / 2;
-    //     if (mid > x / mid) {
-    //         right = mid - 1;
-    //     } else {
-    //         if (mid + 1 > x / (mid + 1)) return mid;
-    //         left = mid + 1;
-    //     }
-    // }
+    long long int s = 0;
+       long long int e = x;
+        long long int ans = 0;
+        while(s<=e){
+        long long int mid = s + (e - s) / 2;
+            long long int sqrt = mid * mid;
+            mid = s + (e-s) / 2;
+            if(sqrt == x){
+                return mid;
+            }
+            if(sqrt < x){
+                ans = mid;
+                s = mid + 1;
+            }
+            else{
+                e = mid - 1;
+            }
+        }
+        return ans;
 }
 // Saqure root function general implementation
 int sqrt1(int x){
@@ -47,6 +54,6 @@ int sqrt1(int x){
 }
 
 main() {
-    int result = sqrt(5);
+    int result = sqrt(8);
     cout << result << endl;
 }
